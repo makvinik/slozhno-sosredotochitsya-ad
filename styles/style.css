@@ -1,5 +1,202 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: 'IBM Plex Mono';
+  background-color: var(--main-background-color);
+  color: var(--text-color);
+  font-size: var(--font-size);
+  /*background-image: var(--background-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+.header {
+  background-image: var(--background-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  min-height: 668px;
+  
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-columns: 1fr;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+
+.rec {
+  position: absolute;
+  top: 10px;
+  right: 19px;
+}
+
+.rec::before {
+  content: "REC";
+  color: var(--rec-color);
+  line-height: 25px;
+}
+
+.rec::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.header__theme-menu-button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.header_title {
+  margin: 0;
+  justify-self: start;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header_subtitle {
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--section_title_text_color);
+  align-self: center;
+  justify-self: end;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  /*width: fit-content;
+  height: fit-content;*/
+}
+
+/*уголки*/
+.decorated-zone {
+  /* Мы уже применяем этот класс к header в HTML */
+  position: relative; 
+  /* Важно: убедитесь, что padding-inline-start и padding-inline-end 
+     (10px и 19px соответственно) уже установлены на .header, 
+     чтобы уголки не прилипали к самому краю экрана. */
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  
+  /* Верхний правый угол */
+  inset-inline-end: 10px;    /* Отступ справа (19px padding - 9px, чтобы было 10px от рамки) */
+  inset-block-start: 10px;  /* Отступ сверху (10px padding) */
+  
+  width: 25px; /* Задаем размер (длину) стороны уголка */
+  height: 25px;
+  
+  /* Стилизация границы: 1px, цвет акцента */
+  border-top: 1px solid var(--accent-color); /* Верхняя граница */
+  border-right: 1px solid var(--accent-color);  /* Правая граница */
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  
+  /* Нижний левый угол */
+  inset-inline-start: 10px;  /* Отступ слева (10px padding) */
+  inset-block-end: 10px;    /* Отступ снизу */
+  
+  width: 25px;
+  height: 25px;
+  
+  /* Стилизация границы: 1px, цвет акцента */
+  border-block-end: 1px solid var(--accent-color); /* Нижняя граница */
+  border-inline-start: 1px solid var(--accent-color); /* Левая граница */
+}
+
+.main {
+  background-color: var(--main-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.title_of_section {
+  font-size: inherit;
+  color: var(--accent-color)
+}
+
+.title_of_mini_section {
+  margin: 0;
+  color: var(--section_title_text_color);
+  font-size: inherit;
+}
+
+.regular-mini-title {
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;     /* Сохраняем пропорции */
+  display: block;   /* Убираем лишние зазоры снизу */
+  object-fit: cover;
+}
+
+.footer {
+  display: grid;
+  min-height: 668px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_title {
+  line-height: 83%;
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
