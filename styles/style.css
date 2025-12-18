@@ -3,20 +3,17 @@
   background-color: var(--main-background-color);
   color: var(--text-color);
   font-size: var(--font-size);
-  /*background-image: var(--background-image);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;*/
-}
-
-.header {
   background-image: var(--background-image);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-inline-size: 375px;
+  /*display: flex;
+  flex-direction: column;*/
+}
 
+.header {
   position: relative;
   min-height: 668px;
   
@@ -24,7 +21,8 @@
   grid-template-rows: 1fr min-content 1fr;
   grid-template-columns: 1fr;
   margin-bottom: 40px;
-  padding: 10px;
+  padding-inline-start: var(--padding);
+  padding-inline-end: var(--padding);
 }
 
 
@@ -49,6 +47,7 @@
   border-radius: 50%;
   margin-left: 5px;
   vertical-align: middle;
+  box-shadow: 0 0 4px 2px #ff0070;
 }
 
 .header__theme-menu {
@@ -68,12 +67,31 @@
 .header__theme-menu-button {
   cursor: pointer;
   background: transparent;
-  border: none;
-  padding: 0;
+  border: 1px solid transparent;
   color: var(--accent-color);
   text-transform: lowercase;
   font-weight: 400;
+  font-size: 18px;
 }
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--menu-hover-color, rgb(255 0 112/0.4));
+}
+
+.header__theme-menu-button:focus {
+  outline: none
+}
+
+.header__theme-menu-item .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--accent-color);
+}
+
 
 .header_title {
   margin: 0;
@@ -100,43 +118,30 @@
 
 /*уголки*/
 .decorated-zone {
-  /* Мы уже применяем этот класс к header в HTML */
   position: relative; 
-  /* Важно: убедитесь, что padding-inline-start и padding-inline-end 
-     (10px и 19px соответственно) уже установлены на .header, 
-     чтобы уголки не прилипали к самому краю экрана. */
 }
 
 .decorated-zone::before {
   content: "";
   position: absolute;
-  
-  /* Верхний правый угол */
-  inset-inline-end: 10px;    /* Отступ справа (19px padding - 9px, чтобы было 10px от рамки) */
-  inset-block-start: 10px;  /* Отступ сверху (10px padding) */
-  
-  width: 25px; /* Задаем размер (длину) стороны уголка */
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  width: 25px;
   height: 25px;
   
-  /* Стилизация границы: 1px, цвет акцента */
-  border-top: 1px solid var(--accent-color); /* Верхняя граница */
-  border-right: 1px solid var(--accent-color);  /* Правая граница */
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
 }
 
 .decorated-zone::after {
   content: "";
   position: absolute;
-  
-  /* Нижний левый угол */
-  inset-inline-start: 10px;  /* Отступ слева (10px padding) */
-  inset-block-end: 10px;    /* Отступ снизу */
-  
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
   width: 25px;
   height: 25px;
-  
-  /* Стилизация границы: 1px, цвет акцента */
-  border-block-end: 1px solid var(--accent-color); /* Нижняя граница */
-  border-inline-start: 1px solid var(--accent-color); /* Левая граница */
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
 }
 
 .main {
@@ -144,10 +149,13 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  padding-inline-start: var(--padding);
+  padding-inline-end: var(--padding);
 }
 
 .section {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -160,6 +168,27 @@
   margin: 0;
   color: var(--section_title_text_color);
   font-size: inherit;
+  line-height: 1.2;
+}
+
+.section_p {
+  font-size: var(--font-size, 18px);
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--text-color, #F1B2CE);
+}
+
+.section_link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--title-decor-color, #ff0070);
+}
+
+.section__article-text-link:focus {
+  outline: 1px solid var(--text-color, #F1B2CE);
+}
+
+.section__article-text-link:hover {
+  border-block-end: 1px solid var(--text-color, #F1B2CE);
 }
 
 .regular-mini-title {
@@ -182,8 +211,8 @@
 
 .card-image {
   width: 100%;
-  height: auto;     /* Сохраняем пропорции */
-  display: block;   /* Убираем лишние зазоры снизу */
+  height: auto;
+  display: block;
   object-fit: cover;
 }
 
