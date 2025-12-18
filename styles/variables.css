@@ -5,7 +5,8 @@
   --title-color: #DB00FF;
   --rec-color: #FF0070;
   --font-size: 18px;
-  --section_title_text_color: #000028;
+  --title-color-of-section: #FF0070;
+  --mini-title-color-of-section: #000028;
   --background-image: url("../images/cover-image-dark.png");
   --padding: 10px;
   --menu-hover-color: rgb(255 0 112/0.4);
