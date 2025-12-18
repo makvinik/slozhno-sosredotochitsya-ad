@@ -21,6 +21,7 @@
   margin-bottom: 40px;
   padding-inline-start: var(--padding);
   padding-inline-end: var(--padding);
+  height: 100vh;
 }
 
 .rec {
@@ -50,7 +51,7 @@
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  color: var(--accent-color);
+  color: var(--header-theme-menu-color);
 }
 
 .header__theme-menu-list {
@@ -65,7 +66,7 @@
   cursor: pointer;
   background: transparent;
   border: 1px solid transparent;
-  color: var(--accent-color);
+  color: var(--header-theme-menu-color);
   text-transform: lowercase;
   font-weight: 400;
   font-size: 18px;
@@ -80,13 +81,13 @@
 }
 
 .header__theme-menu-item .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--header-theme-menu-color);
   outline: none;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--header-theme-menu-color);
 }
 
 .header_title {
@@ -101,7 +102,7 @@
 .header_subtitle {
   font-weight: 700;
   line-height: 23.4px;
-  color: var(--section_title_text_color);
+  color: var(--mini-title-color-of-section);
   align-self: center;
   justify-self: end;
 }
@@ -147,7 +148,7 @@
 }
 
 .section {
-  display: flex;
+  display: grid;
   flex-direction: column;
   gap: 20px;
 }
@@ -164,16 +165,16 @@
 }
 
 .title_of_mini_section {
-  margin: 0;
-  color: var(--mini-title-color-of-section);
-  font-size: inherit;
+  font-size: var(--font-size, 18px);
+  font-weight: 700;
   line-height: 1.2;
+  color: var(--title-text-color, #000028);
 }
 
 .section_p {
   font-size: var(--font-size, 18px);
   font-weight: 400;
-  line-height: 23.4px;
+  line-height: 21px;
   color: var(--text-color, #F1B2CE);
 }
 
