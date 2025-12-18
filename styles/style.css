@@ -159,6 +159,12 @@
   gap: 20px;
 }
 
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .title_of_section {
   font-size: inherit;
   color: var(--accent-color)
