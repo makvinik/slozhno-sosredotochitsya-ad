@@ -209,13 +209,13 @@
   gap: 10px;
 }
 
-.card-images {
+.card_images {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
 }
 
-.card-image {
+.card_image {
   width: 100%;
   height: auto;
   display: block;
@@ -234,4 +234,124 @@
   color: var(--title-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+
+@media (width >= 768px) {
+  .header {
+    min-block-size: 1024px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 60px;
+    padding-inline-start: var(--padding, 20px);
+    padding-inline-end: var(--padding, 20px);
+  }
+
+  .rec {
+    margin-block-start: 20px;
+  }
+
+  .header__theme-menu {
+    grid-column: span 2;
+  }
+
+  .decorated-zone::before {
+    right: 0px;
+    top: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 0px;
+  }
+
+  .header_title {
+    grid-column: span 2;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: -20px;
+  }
+
+ .header_subtitle {
+    grid-column: 2;
+  }
+
+  .main {
+    padding-inline-start: var(--padding, 20px);
+    padding-inline-end: var(--padding, 20px);
+    gap: 80px;
+  }
+
+  .focus_is_hard,  
+  .better_than_gold_fish {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .focus_is_hard .title_of_section,
+  .better_than_gold_fish .title_of_section {
+    grid-column: 1;
+  }
+
+  .focus_is_hard .article,
+  .better_than_gold_fish .article {
+    grid-column: 2;
+  }
+
+  .attention {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .attention .article {
+    grid-column: span 3;
+  }
+
+  .card {
+    gap: 20px;
+  }
+
+   .card_images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .card_image {
+    block-size: 100%;
+  }
+
+  .card_image_sunset {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .card_image_ice {
+    grid-column: 3;
+    grid-row: 1/3;
+  }
+
+  .card_image_tape {
+    grid-column: 1;
+    grid-row: 2/4;
+  }
+
+  .card_image_books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .card_image_street {
+    grid-column: span 2;
+    grid-row: 3;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+    margin-top: 60px;
+    padding-inline-start: var(--padding, 20px);
+    padding-inline-end: var(--padding, 20px);
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
