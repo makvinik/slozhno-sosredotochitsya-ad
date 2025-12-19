@@ -201,7 +201,7 @@
   font-size: 18px;
 }
 
-.better_than_gold_fish .title_of_mini_section:first-child {
+.better_than_gold_fish .first-mini-title {
   margin-bottom: 10px;
 }
 
@@ -230,6 +230,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin-top: 40px;
 }
 
 .footer_title {
