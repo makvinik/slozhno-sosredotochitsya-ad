@@ -22,6 +22,9 @@
   padding-inline-start: var(--padding);
   padding-inline-end: var(--padding);
   height: 100vh;
+
+  padding-block-start: var(--padding, 10px);
+  padding-block-end: var(--padding, 10px);
 }
 
 .rec {
@@ -167,15 +170,16 @@
 .title_of_mini_section {
   font-size: var(--font-size, 18px);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 23.4px;
   color: var(--title-text-color, #000028);
 }
 
 .section_p {
   font-size: var(--font-size, 18px);
   font-weight: 400;
-  line-height: 21px;
+  line-height: 23.4px;
   color: var(--text-color, #F1B2CE);
+  letter-spacing: 0%;
 }
 
 .section_link {
