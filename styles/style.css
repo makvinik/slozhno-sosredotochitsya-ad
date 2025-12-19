@@ -201,6 +201,10 @@
   font-size: 18px;
 }
 
+.better_than_gold_fish .title_of_mini_section:first-child {
+  margin-bottom: 10px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
